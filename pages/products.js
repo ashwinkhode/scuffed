@@ -1,10 +1,9 @@
-const ProductsPage = () => {
-  const body = 'Products';
-  return (
-    <div>
-      <p>{body}</p>
-    </div>
-  );
-};
+import Products from '../components/Products';
+
+const ProductsPage = () => (
+  <div>
+    <Products />
+  </div>
+);
 
 export default ProductsPage;
