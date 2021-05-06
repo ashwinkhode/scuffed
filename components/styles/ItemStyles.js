@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Item = styled.div`
+const ItemStyles = styled.div`
   background: white;
   border: 1px solid var(--offWhite);
   box-shadow: var(--bs);
@@ -10,7 +10,8 @@ const Item = styled.div`
   img {
     width: 100%;
     height: 400px;
-    object-fit: cover;
+    object-fit: contain;
+    padding: 2rem;
   }
   p {
     line-height: 2;
@@ -35,4 +36,4 @@ const Item = styled.div`
   }
 `;
 
-export default Item;
+export default ItemStyles;
