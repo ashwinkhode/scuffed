@@ -67,7 +67,7 @@ export default function CreateProduct() {
     >
       <DisplayError error={error} />
       <fieldset disabled={loading} aria-busy={loading}>
-        <label htmlFor="iamge">
+        <label htmlFor="image">
           Image
           <input
             type="file"
