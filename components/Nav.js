@@ -1,9 +1,12 @@
 import Link from 'next/link';
+import { useCart } from '../lib/cartState';
+import CartCount from './CartCount';
 import SignOut from './SignOut';
 import NavStyles from './styles/NavStyles';
 import { useUser } from './User';
 
 const Nav = () => {
+  const { openCart } = useCart();
   const user = useUser();
   return (
     <NavStyles>
@@ -14,6 +17,15 @@ const Nav = () => {
           <Link href="/orders">Orders</Link>
           <Link href="/account">Account</Link>
           <SignOut />
+          <button type="button" onClick={openCart}>
+            My Cart
+            <CartCount
+              count={user.cart.reduce(
+                (tally, cartItem) => +tally + +cartItem.quantity,
+                0
+              )}
+            />
+          </button>
         </>
       )}
       {!user && (
